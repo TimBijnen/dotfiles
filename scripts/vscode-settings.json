@@ -1,0 +1,21 @@
+{
+  "workbench.colorTheme": "Solarized Light",
+  "git.ignoreMissingGitWarning": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.semi": false,
+  "eslint.format.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "redhat.telemetry.enabled": true,
+  "workbench.editorAssociations": {
+    "*.zip": "default"
+  },
+  "files.exclude": {
+    "": true
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  }
+}
