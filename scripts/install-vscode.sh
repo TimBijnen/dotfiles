@@ -6,7 +6,7 @@ else
 fi
 echo "Visual Studio Code installation completed!"
 
-EXTENSIONS_FILE="vscode-extensions-list.txt"
+EXTENSIONS_FILE="scripts/vscode-extensions-list.txt"
 
 echo "Installing VS Code Extensions from $EXTENSIONS_FILE..."
 if [[ -f "$EXTENSIONS_FILE" ]]; then
@@ -19,8 +19,8 @@ fi
 echo "VS Code Extensions installation completed!"
 
 # Restore VS Code settings
-SETTINGS_FILE="vscode-settings.json"
-KEYBINDINGS_FILE="vscode-keybindings.json"
+SETTINGS_FILE="scripts/vscode-settings.json"
+KEYBINDINGS_FILE="scripts/vscode-keybindings.json"
 TARGET_DIR="$HOME/Library/Application Support/Code/User/"
 
 if [[ -f "$SETTINGS_FILE" ]]; then

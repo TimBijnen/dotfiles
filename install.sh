@@ -4,8 +4,8 @@
 echo "Starting installation..."
 
 # Run scripts one by one
-bash scripts/install-node.sh
 bash scripts/install-brew.sh
+bash scripts/install-node.sh
 bash scripts/install-vscode.sh
 bash scripts/install-chrome.sh
 
