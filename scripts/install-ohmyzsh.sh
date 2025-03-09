@@ -1,11 +1,11 @@
+#!/bin/bash
+
 # Install Oh My Zsh
 echo "Installing Oh My Zsh..."
 if ! command -v zsh &> /dev/null; then
     echo "Zsh is not installed. Installing Zsh..."
     if [[ "$OSTYPE" == "darwin"* ]]; then
         brew install zsh
-    elif [[ -f "/etc/os-release" && "$(grep '^ID=' /etc/os-release)" == *"ubuntu"* ]]; then
-        sudo apt update && sudo apt install zsh -y
     else
         echo "Unsupported OS for automatic Zsh installation."
     fi

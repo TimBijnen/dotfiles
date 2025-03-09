@@ -9,7 +9,7 @@ echo "Playwright installed successfully!"
 
 # Install BrowserStack Local Testing (optional)
 echo "Installing BrowserStack Local..."
-if [[ "$OSTYPE" == "darwin"* || "$OSTYPE" == "linux-gnu"* ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
     curl -fsSL https://www.browserstack.com/local-testing/downloads --output BrowserStackLocal
     chmod +x BrowserStackLocal
     sudo mv BrowserStackLocal /usr/local/bin/

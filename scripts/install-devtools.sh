@@ -7,12 +7,8 @@ echo "Installing Prisma..."
 npm install --global prisma
 echo "Prisma installed successfully!"
 
-# Install DevToys (Linux only; for Windows/macOS, download from website)
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    echo "Installing DevToys..."
-    sudo snap install devtoys --edge
-    echo "DevToys installed successfully!"
-fi
+# Install DevToys (not available for macOS via script; download from website)
+echo "DevToys is not available for macOS via script. Please download it from the official website."
 
 # Install Dapr
 echo "Installing Dapr..."
@@ -24,5 +20,9 @@ echo "Installing Prettier and ESLint..."
 npm install --global prettier eslint
 echo "Prettier and ESLint installed successfully!"
 
+# Install zoxide
+echo "Installing zoxide..."
 brew install zoxide
+echo "zoxide installed successfully!"
+
 echo "Developer tools installation completed!"

@@ -1,9 +1,6 @@
-# Install Visual Studio Code (this example is for Linux; adjust for macOS/Windows)
 echo "Installing Visual Studio Code..."
 if ! command -v code &> /dev/null; then
-    curl -fsSL https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -o vscode.deb
-    sudo apt install ./vscode.deb -y
-    rm vscode.deb
+    brew install --cask visual-studio-code
 else
     echo "Visual Studio Code is already installed!"
 fi
@@ -22,23 +19,24 @@ fi
 echo "VS Code Extensions installation completed!"
 
 # Restore VS Code settings
-SETTINGS_FILE="vscode/settings.json"
-TARGET_DIR=""
+SETTINGS_FILE="vscode-settings.json"
+KEYBINDINGS_FILE="vscode-keybindings.json"
+TARGET_DIR="$HOME/Library/Application Support/Code/User/"
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    TARGET_DIR="$HOME/.config/Code/User/"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    TARGET_DIR="$HOME/Library/Application Support/Code/User/"
-elif [[ "$OSTYPE" == "msys"* || "$OSTYPE" == "cygwin"* ]]; then
-    TARGET_DIR="$APPDATA/Code/User/"
-fi
-
-if [[ -n "$TARGET_DIR" && -f "$SETTINGS_FILE" ]]; then
+if [[ -f "$SETTINGS_FILE" ]]; then
     echo "Restoring VS Code settings to $TARGET_DIR..."
     mkdir -p "$TARGET_DIR"
     cp "$SETTINGS_FILE" "$TARGET_DIR"
 else
-    echo "Could not restore settings. Ensure $SETTINGS_FILE exists and TARGET_DIR is set correctly."
+    echo "Could not restore settings. Ensure $SETTINGS_FILE exists."
 fi
-echo "VS Code settings restored!"
 
+# Restore VS Code keybindings
+if [[ -f "$KEYBINDINGS_FILE" ]]; then
+    echo "Restoring VS Code keybindings to $TARGET_DIR..."
+    cp "$KEYBINDINGS_FILE" "$TARGET_DIR"
+else
+    echo "Could not restore keybindings. Ensure $KEYBINDINGS_FILE exists."
+fi
+
+echo "VS Code settings and keybindings restored!"

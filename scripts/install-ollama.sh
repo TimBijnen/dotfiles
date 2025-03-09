@@ -3,21 +3,19 @@
 # Install Ollama
 echo "Installing Ollama..."
 
-if [[ "$OSTYPE" == "linux-gnu"* || "$OSTYPE" == "darwin"* ]]; then
-    # macOS or Linux installation
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS installation
     if ! command -v ollama &> /dev/null; then
         curl -fsSL https://ollama.com/install.sh | sh
         echo "Ollama installed successfully!"
     else
         echo "Ollama is already installed!"
     fi
-elif [[ "$OSTYPE" == "msys"* || "$OSTYPE" == "cygwin"* ]]; then
-    # Windows installation notice
-    echo "Please download and install Ollama manually for Windows from https://ollama.com/download/windows."
 else
-    echo "Unsupported operating system for Ollama installation."
+    echo "This script is intended for macOS only."
 fi
-echo "Ollama installation completed!"s
+
+echo "Ollama installation completed!"
 
 # Install all available LLMs
 echo "Installing all available Ollama LLMs..."
